@@ -1,5 +1,4 @@
 import openai
-import Prompts
 
 
 
@@ -8,7 +7,9 @@ import Prompts
 
 
 
-def chat_with_gpt(prompt):
+
+def chat_with_gpt(prompt, api_key):
+    openai.api_key = api_key
     response = openai.Completion.create(
         engine='davinci',                        # Chooses the engines being used. 
         prompt=prompt,                           # Prompt=Prompt :/
